@@ -1,17 +1,35 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    // 嚴格模式：早啲發現型別問題
     "strict": true,
+
+    // React 17+ 新 JSX Transform（Expo 預設 React 18）
+    // 若你更偏好 RN 的舊配置亦可用 "react-native"
+    "jsx": "react-jsx",
+
+    // 允許以 "@/..." 作為別名
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+      "@/*": ["./*"]
+    },
+
+    // 型別增強（NativeWind / expo-router）
+    "types": ["nativewind/types", "expo-router"],
+
+    // 一般相容性設定
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+  ],
+  "exclude": ["node_modules"]
 }

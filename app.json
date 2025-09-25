@@ -3,6 +3,7 @@
     "name": "Japanese-learning-App",
     "slug": "Japanese-learning-App",
     "version": "1.0.0",
+    "expo": { "plugins": ["expo-router"], "experiments": { "typedRoutes": true } } ,
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "japaneselearningapp",
